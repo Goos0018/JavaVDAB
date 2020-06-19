@@ -1,0 +1,19 @@
+package be.vdab;
+
+import java.util.Scanner;
+
+public class AreaOfAPentagon {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the side of your pentagon to calculate the area");
+        double side = input.nextDouble();
+        double result = area(side);
+        System.out.println("The area of the pentagon is " + result);
+    }
+
+    public static double area(double side) {
+        double result = (5 * (side * side)) / (4 * (Math.tan(Math.PI / 5)));
+        return result;
+    }
+}
