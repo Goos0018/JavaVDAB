@@ -1,0 +1,90 @@
+package be.vdab.RegularPolygon;
+
+public class TestProgramPolygons {
+    public static void main(String[] args) {
+
+        //Create 3 objects
+        RegularPolygon polygon1 = new RegularPolygon();
+        RegularPolygon polygon2 = new RegularPolygon(6, 4);
+        RegularPolygon polygon3 = new RegularPolygon(10, 4, 5.6, 7.8);
+
+        //Print area and perimeter of 3 objects to console
+        System.out.println("The area of polygon1 is " + polygon1.getArea());
+        System.out.println("The perimeter of polygon1 is " + polygon1.getPerimeter());
+        System.out.println();
+        System.out.println("The area of polygon2 is " + polygon2.getArea());
+        System.out.println("The perimeter of polygon2 is " + polygon2.getPerimeter());
+        System.out.println();
+        System.out.println("The area of polygon3 is " + polygon3.getArea());
+        System.out.println("The perimeter of polygon3 is " + polygon3.getPerimeter());
+    }
+}
+
+package be.vdab.RegularPolygon;
+
+public class RegularPolygon {
+
+    //Set default variables
+    private int n = 3;
+    private double side = 1;
+    private double x = 0;
+    private double y = 0;
+
+    //Create default polygon
+    RegularPolygon() {
+    }
+
+    //Create polygon with specified number of sides and length of those sides.
+    RegularPolygon(int newN, double newSide) {
+        n = newN;
+        side = newSide;
+    }
+
+    //create polygon with specified number of sides and length of those side + point of center.
+    RegularPolygon(int newN, double newSide, double newX, double newY) {
+        n = newN;
+        side = newSide;
+        x = newX;
+        y = newY;
+    }
+
+    public int getN() {
+        return n;
+    }
+
+    public void setN(int n) {
+        this.n = n;
+    }
+
+    public double getSide() {
+        return side;
+    }
+
+    public void setSide(double side) {
+        this.side = side;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getPerimeter() {
+        return side * n;
+    }
+
+    public double getArea() {
+        return (n * (side * side)) / (4 * (Math.tan(Math.PI / n)));
+    }
+}
