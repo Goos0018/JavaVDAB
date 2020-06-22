@@ -1,0 +1,47 @@
+package be.vdab;
+
+public class Rectangle {
+
+    //data variables
+    double width = 1;
+    double height = 1;
+
+    //rectangle constructor
+    Rectangle(double newWidth, double newHeight) {
+        width = newWidth;
+        height = newHeight;
+    }
+
+    //get area constructor
+    double getArea() {
+        return width * height;
+
+    }
+
+    //get perimeter constructor
+    double getPerimeter() {
+        return (width * height) * 2;
+
+    }
+}
+
+class TestProgram {
+    public static void main(String[] args) {
+
+        //Create rectangle with width 4 and height 40
+        Rectangle rectangle1 = new Rectangle(4, 40);
+
+        //Create rectangle with width 3.5 and height 35.9
+        Rectangle rectangle2 = new Rectangle(3.5, 35.9);
+
+        //print width, height, area and perimeter of rectangle1
+        System.out.println("Rectangle 1 has a width of " + rectangle1.width + ", a height of " + rectangle1.height + "." + ".");
+        System.out.println("The area is " + rectangle1.getArea() + ", and the perimeter is " + rectangle1.getPerimeter() + ".");
+
+        System.out.println();
+
+        //print width, height, area and perimeter of rectangle2
+        System.out.println("Rectangle 2 has a width of " + rectangle2.width + ", a height of " + rectangle2.height + "." + ".");
+        System.out.println("The area is " + rectangle2.getArea() + ", and the perimeter is " + rectangle2.getPerimeter() + ".");
+    }
+}
